@@ -13,7 +13,6 @@ import {
     FormMessage
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -53,14 +52,15 @@ export const DescriptionForm = ({
     });
 
     const { isSubmitting, isValid } = form.formState;
+    
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try{
             await axios.patch(`/api/courses/${courseId}`,values);
-            toast.success("Course Description updated.");
+            toast.success("Course Description updated");
             toggleEdit();
             router.refresh();
         }catch{
-            toast.error("Something went wrong.")
+            toast.error("Something went wrong")
         }
     }
 

@@ -13,7 +13,7 @@ export const ConfettiProvider = () => {
 
   return (
     <Confetti
-      className="pointer-events-none z-[1000]"
+      className="pointer-events-none z-[100]"
       width={width}
       height={height}
       numberOfPieces={500}
